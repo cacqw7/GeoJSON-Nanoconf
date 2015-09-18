@@ -6,13 +6,6 @@ var defaultStyle = {
   fillColor: "#2262CC"
 };
 
-var highlightStyle = {
-  color: '#2262CC',
-  weight: 3,
-  opacity: 0.6,
-  fillOpacity: 0.65,
-  fillColor: '#2262CC'
-};
 
 // More here: http://leaflet-extras.github.io/leaflet-providers/preview/
 var tileSources = {
@@ -41,3 +34,14 @@ var tileSources = {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }
 };
+
+var getColor = function (d) {
+  return d > 1000 ? '#800026' :
+         d > 500  ? '#BD0026' :
+         d > 200  ? '#E31A1C' :
+         d > 100  ? '#FC4E2A' :
+         d > 50   ? '#FD8D3C' :
+         d > 20   ? '#FEB24C' :
+         d > 10   ? '#FED976' :
+                    '#FFEDA0';
+}
